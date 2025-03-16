@@ -11,7 +11,7 @@ const FoodRecommendation = () => {
   const [recommendations, setRecommendations] = useState([]);
 
   // API Key
-  const API_KEY = import.meta.env.USDA_API_KEY ; 
+  const API_KEY = import.meta.env.VITE_USDA_API_KEY ; 
   const API_URL = 'https://api.nal.usda.gov/fdc/v1';
 
   const searchFoods = async () => {
