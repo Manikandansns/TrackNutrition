@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0;
+    font-family: 'DM Sans Merlin';
+}
+button{
+    border: none;
+}
+.logo{
+    color: #f75047;
+    text-decoration: underline #f75047;
+}
+.Title{
+    color: #f75047;
+    text-decoration: underline #f75047;
+}

@@ -1,0 +1,43 @@
+.hero-banner{
+    background-image: url(../../../../assets/721badf5db4c252bb1313c28332e4baf.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.hero-banner-container {
+    width: 500px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0rem 3rem 3rem 0rem;
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    
+    /* Glass effect properties */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hero-banner-btn{
+    background-color: #f75047;
+    padding: 1rem 3rem;
+    color: white;
+    font-size: large;
+    font-weight: 800;
+    border-radius: 18px;
+    width: fit-content;
+}
+.hero-banner-description{
+    color: white;
+    font-size: xxx-large;
+}
+.hero-banner-span{
+    color: #f75047;
+}

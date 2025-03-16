@@ -1,0 +1,144 @@
+/* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 1.7rem 2.4rem;
+  position: fixed;
+  top: 0;
+  width: -webkit-fill-available;
+  z-index: 10;
+  background-color: white;
+}
+
+.navbar-bg {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 26px 24px 90px 0 rgba(87, 183, 171, 0.19);
+}
+.nav-fav-btn{
+  border: none;
+  background-color: unset;
+  display: flex;
+  align-items: center;
+}
+.nav-fav{
+  width: 20px;
+  height: 20px; 
+}
+
+.navbar-container{
+  display: contents;
+}
+
+.logo-container {
+  display: contents;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 7.5rem;
+  color: black;
+}
+
+.nav-links,
+.nav-btn {
+  display: flex;
+  align-items: center;
+}
+.nav-add-to-cart-btn{
+  background-color: unset;
+  border: none;
+}
+
+.link{
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link{
+  color: black;
+}
+
+.nav-btn {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+/* Hamburger Menu Styles */
+.bars {
+  display: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 26px 24px 90px 0 rgba(87, 183, 171, 0.19);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-link {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-link:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Styles (Media Queries) */
+@media (max-width: 850px) {
+  .nav-links,
+  .profile-wrapper {
+    display: none;
+  }
+
+  .bars {
+    display: block;
+  }
+}
