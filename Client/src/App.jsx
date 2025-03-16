@@ -5,10 +5,11 @@ import NutritionSearch from './pages/user/NutritionPage/NutritionSearch';
 import RecipeSearch from './pages/user/RecipePage/RecipeSearch';
 import Navbar from './components/navbar/Navbar';
 import './App.css'
+import FoodRecommendationApp from './pages/user/FoodRecommendation/FoodRecommendationApp';
 
 const App = () => {
 
-  
+
 
   return (
        <BrowserRouter>
@@ -16,7 +17,8 @@ const App = () => {
             <Routes>                
                 <Route path="/" element={<HomePage/> } />      
                 <Route path="/nutrition" element={<NutritionSearch/> } />
-                <Route path="/recipe" element={<RecipeSearch/> } />     
+                <Route path="/recipe" element={<RecipeSearch/> } />  
+                <Route path="/plan" element={<FoodRecommendationApp/> } />     
             </Routes>
         </BrowserRouter>
   )

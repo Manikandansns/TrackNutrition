@@ -50,6 +50,7 @@ const Navbar = () => {
             <li><Link to="/" className="link">Home</Link></li>
             <li><Link to="/nutrition" className="link">Nutrition</Link></li>
             <li><Link to="/recipe" className="link">Recipe</Link></li>
+            <li><Link to="/plan" className="link">Plan</Link></li>
           </ul>
         </div>
         <div className="nav-btn">
@@ -71,6 +72,7 @@ const Navbar = () => {
         <Link to="/" className="nav-link" onClick={closeNav}>Home</Link>
         <Link to="/nutrition" className="nav-link" onClick={closeNav}>Nutrition</Link>
         <Link to="/recipe" className="nav-link" onClick={closeNav}>Recipe</Link>
+        <li><Link to="/plan" className="link">Plan</Link></li>
         <Link to="/" className="nav-link" onClick={closeNav}>Logout</Link>
       </div>
     </nav>

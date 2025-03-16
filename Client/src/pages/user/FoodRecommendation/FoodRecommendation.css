@@ -1,0 +1,320 @@
+/* FoodRecommendationApp.css */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  /* App Container */
+  .food-app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* App Header */
+  .food-app-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .input-group {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-grow: 1;
+  }
+  
+  .calorie-input {
+    margin-left: 0.5rem;
+    width: 100px;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #f75047;
+    color: white;
+    margin-left: 0.5rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e64138;
+  }
+  
+  .btn-success {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+  }
+  
+  .btn-success:hover {
+    background-color: #27ae60;
+  }
+  
+  .btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+  }
+  
+  .btn-danger:hover {
+    background-color: #d73c2c;
+  }
+  
+  /* Search Results */
+  .search-results {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .search-results-header {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-results-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-results-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-results-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Selected Foods */
+  .selected-foods {
+    margin-bottom: 1.5rem;
+  }
+  
+  .selected-foods-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .no-foods-message {
+    color: #666;
+  }
+  
+  .selected-foods-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .selected-food-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .selected-food-item:last-child {
+    border-bottom: none;
+  }
+  
+  .food-info {
+    flex: 1;
+  }
+  
+  .food-name {
+    font-weight: 600;
+  }
+  
+  .food-details {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  
+  .food-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-label {
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .quantity-input {
+    padding: 0.25rem 0.5rem;
+    width: 4rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Nutrition Summary */
+.nutrition-summary {
+  margin-bottom: 1.5rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.nutrition-summary-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.nutrition-values {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .nutrition-values {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.nutrition-value {
+  margin-bottom: 0.5rem;
+}
+
+.calories-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.protein-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrition-value-label {
+  font-weight: 600;
+}
+
+.nutrition-percentage {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Recommendations */
+.recommendations {
+  padding: 1rem;
+  background-color: rgba(247, 80, 71, 0.05);
+  border: 1px solid rgba(247, 80, 71, 0.2);
+  border-radius: 8px;
+}
+
+.recommendations-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f75047;
+}
+
+.recommendation-text {
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-foods {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.recommendation-food-item {
+  margin-bottom: 0.25rem;
+}
+
+/* Status messages */
+.loading-message {
+  margin-top: 0.5rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 0.5rem;
+}
+
+/* Glass effect like your hero banner for special elements */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  padding: 2rem;
+}
+
+/* Accent color elements */
+.accent-text {
+  color: #f75047;
+  font-weight: 600;
+}
+
+/* Additional elements to match hero banner styling */
+.hero-styled-button {
+  background-color: #f75047;
+  padding: 1rem 3rem;
+  color: white;
+  font-size: large;
+  font-weight: 800;
+  border-radius: 18px;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-styled-button:hover {
+  background-color: #e63c33;
+}
