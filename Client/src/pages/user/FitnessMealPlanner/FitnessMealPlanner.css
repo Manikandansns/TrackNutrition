@@ -1,0 +1,312 @@
+/* Main container styles */
+.fitness-planner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fitness-planner__title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 28px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+  }
+  
+  .fitness-planner__section-title {
+    color: #2c3e50;
+    margin: 20px 0 15px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  /* User metrics form styles */
+  .fitness-planner__user-metrics {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  
+  .fitness-planner__metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .fitness-planner__metric-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .fitness-planner__metric-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .fitness-planner__metric-group input,
+  .fitness-planner__metric-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .fitness-planner__metric-group select {
+    height: 40px;
+  }
+  
+  .fitness-planner__unit-converter {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+  }
+  
+  .fitness-planner__generate-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  .fitness-planner__generate-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .fitness-planner__generate-btn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  /* Nutrition goals styles */
+  .fitness-planner__goals {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  
+  .fitness-planner__goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .fitness-planner__goal-item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .fitness-planner__goal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .fitness-planner__progress-bar {
+    height: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .fitness-planner__progress-fill {
+    background-color: #3498db;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+  }
+  
+  .fitness-planner__progress-fill--protein {
+    background-color: #e74c3c;
+  }
+  
+  .fitness-planner__progress-fill--carbs {
+    background-color: #2ecc71;
+  }
+  
+  .fitness-planner__progress-fill--fat {
+    background-color: #f39c12;
+  }
+  
+  .fitness-planner__timeline {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-size: 14px;
+  }
+  
+  .fitness-planner__cost-summary {
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f4fd;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+  }
+  
+  /* Meal plan styles */
+  .fitness-planner__meal-plan {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  
+  .fitness-planner__meal-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+  }
+  
+  .fitness-planner__meal-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fcfcfc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .fitness-planner__meal-card h4 {
+    margin-top: 0;
+    color: #3498db;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .fitness-planner__meal-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .fitness-planner__meal-item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+  }
+  
+  .fitness-planner__meal-item:last-child {
+    border-bottom: none;
+  }
+  
+  .fitness-planner__food-name {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .fitness-planner__food-quantity {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+  }
+  
+  .fitness-planner__food-macros {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: #7f8c8d;
+  }
+  
+  /* Food selections table styles */
+  .fitness-planner__food-selections {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  
+  .fitness-planner__food-table-container {
+    overflow-x: auto;
+  }
+  
+  .fitness-planner__food-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .fitness-planner__food-table th,
+  .fitness-planner__food-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .fitness-planner__food-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+  
+  .fitness-planner__food-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .fitness-planner__food-table-totals {
+    font-weight: 600;
+    background-color: #e8f4fd;
+  }
+  
+  /* Loading and error states */
+  .fitness-planner__loading,
+  .fitness-planner__error {
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .fitness-planner__loading {
+    background-color: #f9f9f9;
+    color: #7f8c8d;
+  }
+  
+  .fitness-planner__error {
+    background-color: #fdeeee;
+    color: #e74c3c;
+    border: 1px solid #f5c6cb;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .fitness-planner__metrics-grid,
+    .fitness-planner__goals-grid,
+    .fitness-planner__meal-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .fitness-planner__food-table {
+      font-size: 12px;
+    }
+    
+    .fitness-planner__food-table th,
+    .fitness-planner__food-table td {
+      padding: 8px 5px;
+    }
+  }

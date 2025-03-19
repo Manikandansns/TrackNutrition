@@ -17,7 +17,7 @@ const RecipeSearch = () => {
       const response = await fetch(`https://api.calorieninjas.com/v1/recipe?query=${encodeURIComponent(query)}`, {
         method: 'GET',
         headers: {
-          'X-Api-Key': import.meta.env.CALORIE_NINJAS_API_KEY,
+          'X-Api-Key': import.meta.env.VITE_CALORIE_NINJAS_API_KEY,
           'Content-Type': 'application/json'
         }
       });

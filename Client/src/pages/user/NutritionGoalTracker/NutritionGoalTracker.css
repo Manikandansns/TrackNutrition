@@ -1,0 +1,425 @@
+/* Main container */
+.nutrition-tracker {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  /* Title */
+  .nutrition-tracker__title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  /* Goals section */
+  .nutrition-tracker__goals {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .nutrition-tracker__goals-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .nutrition-tracker__goals-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .nutrition-tracker__goal-group {
+    margin-bottom: 10px;
+  }
+  
+  .nutrition-tracker__goal-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__goal-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 120px;
+    font-size: 16px;
+  }
+  
+  /* Progress section */
+  .nutrition-tracker__progress {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nutrition-tracker__progress-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .nutrition-tracker__empty-message {
+    color: #777;
+    font-style: italic;
+  }
+  
+  .nutrition-tracker__progress-bars {
+    margin-bottom: 24px;
+  }
+  
+  .nutrition-tracker__progress-item {
+    margin-bottom: 16px;
+  }
+  
+  .nutrition-tracker__progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  
+  .nutrition-tracker__progress-label {
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__progress-percentage {
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 999px;
+    height: 16px;
+    overflow: hidden;
+  }
+  
+  .nutrition-tracker__progress-bar {
+    height: 16px;
+    border-radius: 999px;
+    transition: width 0.3s ease;
+  }
+  
+  .nutrition-tracker__progress-bar--protein {
+    background-color: #3b82f6;
+  }
+  
+  .nutrition-tracker__progress-bar--protein-complete {
+    background-color: #22c55e;
+  }
+  
+  .nutrition-tracker__progress-bar--carbs {
+    background-color: #eab308;
+  }
+  
+  .nutrition-tracker__progress-bar--carbs-complete {
+    background-color: #22c55e;
+  }
+  
+  .nutrition-tracker__goals-met {
+    color: #22c55e;
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__goals-not-met {
+    color: #f97316;
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__reoptimize-button {
+    margin-top: 12px;
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .nutrition-tracker__reoptimize-button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Food quantities section */
+  .nutrition-tracker__quantities-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  
+  .nutrition-tracker__quantities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nutrition-tracker__quantity-item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 16px;
+  }
+  
+  .nutrition-tracker__quantity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .nutrition-tracker__food-name {
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__remove-button {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .nutrition-tracker__remove-button:hover {
+    color: #dc2626;
+  }
+  
+  .nutrition-tracker__quantity-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .nutrition-tracker__quantity-adjuster {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nutrition-tracker__quantity-button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .nutrition-tracker__quantity-button:hover {
+    background-color: #d0d0d0;
+  }
+  
+  .nutrition-tracker__quantity-button--decrement {
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .nutrition-tracker__quantity-button--increment {
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .nutrition-tracker__quantity-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .nutrition-tracker__quantity-input {
+    width: 60px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    padding: 4px 0;
+    font-size: 16px;
+  }
+  
+  .nutrition-tracker__quantity-unit {
+    margin-left: 4px;
+  }
+  
+  .nutrition-tracker__nutrient-info {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Search section */
+  .nutrition-tracker__search {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nutrition-tracker__search-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .nutrition-tracker__search-form {
+    margin-bottom: 16px;
+  }
+  
+  .nutrition-tracker__search-container {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .nutrition-tracker__search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .nutrition-tracker__search-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .nutrition-tracker__search-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .nutrition-tracker__search-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .nutrition-tracker__error {
+    color: #ef4444;
+    margin-bottom: 16px;
+  }
+  
+  .nutrition-tracker__results-title {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .nutrition-tracker__results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nutrition-tracker__result-item {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .nutrition-tracker__result-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .nutrition-tracker__result-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .nutrition-tracker__result-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .nutrition-tracker__result-info {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .nutrition-tracker__add-button {
+    background-color: #22c55e;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .nutrition-tracker__add-button:hover {
+    background-color: #16a34a;
+  }
+  
+  .nutrition-tracker__add-button:disabled {
+    opacity: 0.7;
+    background-color: #d1d5db;
+    cursor: not-allowed;
+  }
+  
+  .nutrition-tracker__no-results {
+    color: #777;
+    font-style: italic;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .nutrition-tracker__goals-inputs {
+      flex-direction: column;
+    }
+    
+    .nutrition-tracker__quantity-controls {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .nutrition-tracker__search-container {
+      flex-direction: column;
+    }
+  }
+
+
+  /* Add these new classes to your CSS file */
+.nutrition-tracker__optimize-button {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nutrition-tracker__optimize-button:hover {
+    background-color: #45a049;
+  }
+  
+  .nutrition-tracker__optimize-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .nutrition-tracker__progress-bar--calories,
+  .nutrition-tracker__progress-bar--calories-complete {
+    background-color: #ff9800;
+  }
+  
+  .nutrition-tracker__progress-bar--calories-complete {
+    background-color: #e65100;
+  }
