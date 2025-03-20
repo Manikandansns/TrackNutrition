@@ -50,7 +50,7 @@ const NutritionSearch = () => {
         `https://api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`,
         {
           headers: {
-            'X-Api-Key': import.meta.env.VITE_CALORIE_NINJAS_API_KEY,
+            'X-Api-Key': import.meta.env.VITE_CALORIE_NINJAS_API_KEY || 'mur8RRpXaVFDebmbdp336A==eX8Z31EsITguxPYY',
           },
         }
       );

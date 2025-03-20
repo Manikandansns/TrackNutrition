@@ -51,6 +51,10 @@ const Navbar = () => {
             <li><Link to="/nutrition" className="link">Nutrition</Link></li>
             <li><Link to="/recipe" className="link">Recipe</Link></li>
             <li><Link to="/plan" className="link">Plan</Link></li>
+            <li><Link to="/demo" className="link">demo</Link></li>
+            <li><Link to="/fitness" className="link">fitness</Link></li>
+            <li><Link to="/gemini" className="link">gemini</Link></li>
+            <li><Link to="/goaltrack" className="link">goaltrack</Link></li>
           </ul>
         </div>
         <div className="nav-btn">
