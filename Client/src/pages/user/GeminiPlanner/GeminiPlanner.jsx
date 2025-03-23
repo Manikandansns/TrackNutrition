@@ -4,8 +4,8 @@ import './GeminiPlanner.css';
 
 const GeminiPlanner = () => {
   // Gemini API key (you should store this securely in a production environment)
-  const GEMINI_API_KEY = 'AIzaSyCX_1Qnzg1ZtHRp8jdHJ5uWnRFvEJERfUk'; // Replace with your actual API key
-  const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent';
+  const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY ; // Replace with your actual API key
+  const GEMINI_API_URL = import.meta.env.VITE_GEMINI_API_URL;
 
   // User metrics and goals
   const [currentWeight, setCurrentWeight] = useState(0);

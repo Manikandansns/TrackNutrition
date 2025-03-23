@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './NutritionGoalTracker.css'
 
 const NutritionGoalTracker = () => {
-  const USDA_API_KEY = 'ZCTTFISfUYkwUQEZLM0J63N9bghXMxXAsidrMLbH';
+  const USDA_API_KEY = import.meta.env.VITE_USDA_API_KEY;
   const USDA_API_BASE_URL = 'https://api.nal.usda.gov/fdc/v1';
 
   const [proteinGoal, setProteinGoal] = useState(0);
