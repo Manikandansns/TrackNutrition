@@ -1,0 +1,455 @@
+/* Claude.css - Styles for the Indian Fitness Meal Planner */
+
+/* Basic Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6; /* Light background */
+  }
+  
+  /* Container */
+  .claude-container {
+    max-width: 64rem; /* Equivalent to max-w-5xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem; /* Equivalent to py-8 px-4 */
+  }
+  
+  /* Titles */
+  .claude-main-title {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    text-align: center;
+    margin-bottom: 2rem; /* Equivalent to mb-8 */
+    color: #1a202c; /* Darker gray */
+  }
+  
+  .claude-card-title {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+    color: #2d3748; /* Dark gray */
+  }
+  
+  /* Card Styling */
+  .claude-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+    padding: 1.5rem; /* Equivalent to p-6 */
+    margin-bottom: 2rem; /* Equivalent to mb-8 */
+  }
+  
+  /* Form Styling */
+  .claude-form-grid {
+    display: grid;
+    gap: 1rem; /* Equivalent to gap-4 */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Base: 1 column */
+  }
+  
+  /* Responsive Grid Columns */
+  @media (min-width: 768px) { /* md breakpoint */
+    .claude-form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .claude-results-grid {
+       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .claude-shopping-list-grid {
+       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) { /* lg breakpoint */
+    .claude-form-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+     .claude-results-grid {
+       grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns for goals/progress */
+    }
+    .claude-shopping-list-grid {
+       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  .claude-form-group {
+    margin-bottom: 1rem; /* Equivalent to mb-4 (applied here for consistency) */
+  }
+  
+  .claude-label {
+    display: block;
+    color: #4a5568; /* Equivalent to text-gray-700 */
+    margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+    font-weight: 500;
+  }
+  
+  .claude-input,
+  .claude-select {
+    width: 100%;
+    padding: 0.5rem 0.75rem; /* Equivalent to py-2 px-3 */
+    border: 1px solid #cbd5e0; /* Equivalent to border + default color */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .claude-input:focus,
+  .claude-select:focus {
+    outline: none;
+    border-color: #4299e1; /* Blue border on focus */
+    box-shadow: 0 0 0 1px #4299e1;
+  }
+  
+  .claude-input-hint {
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    color: #718096; /* Equivalent to text-gray-500 */
+    margin-top: 0.25rem; /* Equivalent to mt-1 */
+  }
+  
+  .claude-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+  }
+  
+  .claude-checkbox {
+    margin-right: 0.5rem; /* Equivalent to mr-2 */
+    height: 1rem;
+    width: 1rem;
+  }
+  
+  .claude-submit-button {
+    background-color: #38a169; /* Equivalent to bg-green-600 */
+    color: #ffffff; /* Equivalent to text-white */
+    padding: 0.5rem 1.5rem; /* Equivalent to py-2 px-6 */
+    border: none;
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: 600;
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+  }
+  
+  .claude-submit-button:hover {
+    background-color: #2f855a; /* Equivalent to hover:bg-green-700 */
+  }
+  
+  .claude-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Nutrition Goals Section */
+  .claude-goals-grid {
+    display: grid;
+    gap: 1rem; /* Equivalent to gap-4 */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Base: 1 column */
+  }
+  @media (min-width: 768px) { /* md breakpoint */
+    .claude-goals-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) { /* lg breakpoint */
+    .claude-goals-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  
+  .claude-goal-item {
+    padding: 1rem; /* Equivalent to p-4 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  }
+  
+  .claude-goal-item--calories { background-color: #ebf8ff; /* bg-blue-50 */ }
+  .claude-goal-item--protein { background-color: #fff5f5; /* bg-red-50 */ }
+  .claude-goal-item--carbs { background-color: #fffbeb; /* bg-yellow-50 */ }
+  .claude-goal-item--fat { background-color: #faf5ff; /* bg-purple-50 */ }
+  
+  .claude-goal-item h3 {
+    font-weight: 600; /* Equivalent to font-semibold */
+    margin-bottom: 0.25rem;
+  }
+  
+  .claude-goal-item--calories h3 { color: #2b6cb0; /* text-blue-800 */ }
+  .claude-goal-item--protein h3 { color: #c53030; /* text-red-800 */ }
+  .claude-goal-item--carbs h3 { color: #b7791f; /* text-yellow-800 */ }
+  .claude-goal-item--fat h3 { color: #6b46c1; /* text-purple-800 */ }
+  
+  .claude-goal-item p:first-of-type { /* The main number */
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #2d3748; /* Darker gray */
+  }
+  
+  .claude-goal-item p:last-of-type { /* Percentage text */
+    color: #718096; /* Equivalent to text-gray-600 */
+    font-size: 0.875rem;
+  }
+  
+  .claude-timeline-card {
+    padding: 1rem; /* Equivalent to p-4 */
+    background-color: #f0fff4; /* Equivalent to bg-green-50 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    border: 1px solid #c6f6d5; /* Light green border */
+  }
+  
+  .claude-timeline-card h3 {
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: #2f855a; /* Equivalent to text-green-800 */
+    margin-bottom: 0.5rem;
+  }
+  
+  .claude-timeline-card p:first-of-type { /* Main text */
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    color: #2d3748;
+  }
+  
+  .claude-timeline-card p:last-of-type { /* Disclaimer text */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    color: #718096; /* Equivalent to text-gray-600 */
+    margin-top: 0.5rem; /* Equivalent to mt-2 */
+  }
+  
+  .claude-timeline-card strong {
+      font-weight: 700; /* font-bold */
+  }
+  
+  /* Meal Plan Results */
+  .claude-results-section {
+    margin-bottom: 2rem;
+  }
+  
+  .claude-progress-title {
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.75rem; /* mb-3 */
+  }
+  
+  .claude-results-grid {
+    display: grid;
+    gap: 1rem; /* gap-4 */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Base: 1 column */
+  }
+  
+  .claude-progress-item > div:first-child { /* Flex container for label/percent */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem; /* mb-1 */
+    font-size: 0.875rem;
+  }
+  
+  .claude-progress-track {
+    width: 100%;
+    background-color: #e2e8f0; /* bg-gray-200 */
+    border-radius: 9999px; /* rounded-full */
+    height: 0.625rem; /* h-2.5 */
+    overflow: hidden; /* Ensure fill stays within bounds */
+  }
+  
+  .claude-progress-fill {
+    height: 100%;
+    border-radius: 9999px; /* rounded-full */
+  }
+  
+  .claude-progress-fill--calories { background-color: #3182ce; /* bg-blue-600 */ }
+  .claude-progress-fill--protein { background-color: #e53e3e; /* bg-red-600 */ }
+  .claude-progress-fill--carbs { background-color: #d69e2e; /* bg-yellow-600 */ }
+  .claude-progress-fill--fat { background-color: #805ad5; /* bg-purple-600 */ }
+  .claude-progress-fill--cost { background-color: #38a169; /* bg-green-600 */ }
+  
+  .claude-cost-section {
+    margin-top: 1rem; /* mt-4 */
+  }
+  
+  .claude-cost-section > div:first-child { /* Flex container */
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 0.25rem; /* mb-1 */
+     font-size: 0.875rem;
+  }
+  
+  /* Meal Breakdown */
+  .claude-meal-sections-container > div + div { /* space-y-6 */
+    margin-top: 1.5rem;
+  }
+  
+  .claude-meal-section {
+    border-top: 1px solid #e2e8f0; /* border-t */
+    padding-top: 1rem; /* pt-4 */
+  }
+  
+  .claude-meal-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.75rem; /* mb-3 */
+  }
+  
+  .claude-meal-title--breakfast { color: #c05621; /* text-orange-700 */ }
+  .claude-meal-title--lunch { color: #2f855a; /* text-green-700 */ }
+  .claude-meal-title--dinner { color: #2b6cb0; /* text-blue-700 */ }
+  .claude-meal-title--snacks { color: #6b46c1; /* text-purple-700 */ }
+  
+  .claude-meal-content {
+    padding: 1rem; /* p-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+  }
+  
+  .claude-meal-content--breakfast { background-color: #fffaf0; /* bg-orange-50 */ }
+  .claude-meal-content--lunch { background-color: #f0fff4; /* bg-green-50 */ }
+  .claude-meal-content--dinner { background-color: #ebf8ff; /* bg-blue-50 */ }
+  .claude-meal-content--snacks { background-color: #faf5ff; /* bg-purple-50 */ }
+  
+  .claude-table-container {
+    overflow-x: auto; /* overflow-x-auto */
+  }
+  
+  .claude-table {
+    min-width: 100%; /* min-w-full */
+    border-collapse: collapse; /* Better table borders */
+  }
+  
+  .claude-table th,
+  .claude-table td {
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-bottom: 1px solid #e2e8f0; /* border-b */
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .claude-table th {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .claude-table td:not(:first-child),
+  .claude-table th:not(:first-child) {
+    text-align: right;
+  }
+  
+  .claude-no-items-message {
+    color: #718096; /* text-gray-500 */
+    font-style: italic;
+  }
+  
+  /* Shopping List */
+  .claude-shopping-list-section {
+    margin-top: 2rem; /* mt-8 */
+    border-top: 1px solid #e2e8f0; /* border-t */
+    padding-top: 1.5rem; /* pt-6 */
+  }
+  
+  .claude-shopping-list-title {
+     font-size: 1.125rem; /* text-lg */
+     font-weight: 600; /* font-semibold */
+     margin-bottom: 0.75rem; /* mb-3 */
+  }
+  
+  .claude-shopping-list-content {
+    background-color: #f9fafb; /* bg-gray-50 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+  }
+  
+  .claude-shopping-list-grid {
+    display: grid;
+    gap: 1rem; /* gap-4 */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Base: 1 column */
+  }
+  
+  .claude-shopping-list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0; /* border-b */
+    padding-bottom: 0.5rem; /* pb-2 */
+    font-size: 0.9rem;
+  }
+  
+  .claude-shopping-list-item span:last-child {
+    font-weight: 600; /* font-semibold */
+    color: #2d3748;
+  }
+  
+  .claude-shopping-list-total {
+    margin-top: 1rem; /* mt-4 */
+    padding-top: 0.5rem; /* pt-2 */
+    border-top: 1px solid #e2e8f0; /* border-t */
+  }
+  
+  .claude-shopping-list-total p {
+    font-weight: 600; /* font-semibold */
+    text-align: right;
+  }
+  
+  /* Tips Section */
+  .claude-tips-section {
+    margin-top: 2rem; /* mt-8 */
+    background-color: #fefcbf; /* bg-yellow-50 slightly adjusted for better contrast */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1px solid #faf089; /* Light yellow border */
+  }
+  
+  .claude-tips-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: #b7791f; /* text-yellow-800-like */
+  }
+  
+  .claude-tips-list {
+    list-style-type: disc; /* list-disc */
+    padding-left: 1.25rem; /* pl-5 */
+    font-size: 0.9rem;
+    color: #4a5568;
+  }
+  
+  .claude-tips-list li + li { /* space-y-1 */
+    margin-top: 0.25rem;
+  }
+  
+  /* Error Message */
+  .claude-error-message {
+    background-color: #fee2e2; /* bg-red-100 */
+    border: 1px solid #f87171; /* border-red-400 */
+    color: #b91c1c; /* text-red-700 */
+    padding: 0.75rem 1rem; /* px-4 py-3 */
+    border-radius: 0.375rem; /* rounded */
+    position: relative;
+    margin-bottom: 1.5rem; /* mb-6 */
+  }
+  
+  .claude-error-message strong {
+    font-weight: 700; /* font-bold */
+  }
+  
+  .claude-error-message span {
+    display: block; /* block */
+  }
+  
+  @media (min-width: 640px) { /* sm breakpoint */
+    .claude-error-message span {
+      display: inline; /* sm:inline */
+      margin-left: 0.5rem;
+    }
+  }
+  
+  
+  /* Disclaimer */
+  .claude-disclaimer {
+    text-align: center;
+    color: #718096; /* text-gray-500 */
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 2rem; /* mt-8 */
+  }

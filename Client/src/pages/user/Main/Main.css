@@ -1,0 +1,369 @@
+/* src/App.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    text-align: center;
+    color: #f75047; /* Material UI primary blue */
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid #f75047;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.form-group label .mui-icon {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #f75047;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.unit-hint {
+    font-size: 0.8rem;
+    color: #777;
+    margin-left: 0.5rem;
+}
+
+.calculate-button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: #f75047;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calculate-button:hover {
+    background-color: #f62c21; /* Darker blue */
+}
+
+.calculate-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background-color: #e3f2fd; /* Light blue background */
+    border: 1px solid #bbdefb; /* Lighter blue border */
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.result-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.result-card p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1e88e5; /* Medium blue */
+    margin: 0;
+}
+
+.result-card .unit {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #42a5f5; /* Light blue */
+}
+
+.timeline-result {
+    background-color: #e8f5e9; /* Light green */
+    border-color: #c8e6c9;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+.timeline-result.impossible {
+     background-color: #ffebee; /* Light red */
+    border-color: #ffcdd2;
+}
+
+.timeline-result h4 {
+    color: #2e7d32; /* Dark green */
+     margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.timeline-result.impossible h4 {
+     color: #c62828; /* Dark red */
+}
+.timeline-result p {
+    font-size: 1rem;
+    color: #388e3c; /* Medium green */
+    margin: 0;
+}
+ .timeline-result.impossible p {
+    color: #d32f2f; /* Medium red */
+}
+
+.meal-plan-section {
+    margin-top: 2rem;
+}
+
+.meal-interval {
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden; /* Contain table */
+}
+
+.meal-interval h4 {
+    background-color: #f5f5f5;
+    padding: 0.8rem 1rem;
+    margin: 0;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meal-interval .meal-items {
+    padding: 0; /* Remove padding if using table */
+}
+
+.meal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.meal-table th,
+.meal-table td {
+    padding: 0.6rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.meal-table th {
+    background-color: #fafafa;
+    font-weight: 500;
+    color: #444;
+}
+ .meal-table td:nth-child(1) { /* Dish Name */
+    font-weight: 500;
+}
+
+.meal-table td:not(:nth-child(1)):not(:nth-child(2)) { /* Nutrient columns */
+    text-align: left !important;
+}
+ .meal-table tr:last-child td {
+    border-bottom: none;
+ }
+
+
+.meal-totals {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+ .meal-totals td {
+     color: #333;
+ }
+
+.no-meal-message {
+    padding: 1rem;
+    text-align: center;
+    color: #777;
+}
+
+.daily-summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fffde7; /* Light yellow */
+    border: 1px solid #fff9c4; /* Lighter yellow */
+    border-radius: 6px;
+}
+.daily-summary h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #f57f17; /* Amber */
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+ .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    text-align: center;
+ }
+  .summary-item strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #ef6c00; /* Orange */
+  }
+   .summary-item span {
+    font-size: 0.9rem;
+    color: #777;
+   }
+
+
+.error-message {
+    color: #d32f2f; /* Material UI error red */
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack form elements */
+    }
+    .results-grid {
+         grid-template-columns: 1fr;
+    }
+    .app-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+     .main-title {
+         font-size: 1.5rem;
+     }
+      .section-title {
+        font-size: 1.2rem;
+    }
+    .meal-table th, .meal-table td {
+        padding: 0.4rem 0.6rem;
+         font-size: 0.8rem;
+    }
+}
+
+/* Helper class for MUI Icons in labels/titles */
+.mui-icon {
+  vertical-align: middle;
+  font-size: 1.2em; /* Adjust size as needed */
+}
+
+
+.meal-item-row td:first-child { /* Make dish name clickable */
+    cursor: pointer;
+    color: #f62c21; /* Link-like color */
+    text-decoration: underline;
+
+    font-weight: 500;
+}
+.meal-item-row td:first-child:hover {
+    color: #f75047;
+    text-decoration-color: #f75047;
+}
+
+.details-button {
+    background: none;
+    border: 1px solid #f75047;
+    color: #f75047;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.details-button:hover {
+    background-color: #e3f2fd;
+    color: #f62c21;
+}
+
+/* Styles for Modal Content (handled more by MUI, but can add overrides) */
+.procedure-section p {
+    margin-bottom: 0.8em; /* Spacing between procedure steps */
+    line-height: 1.5;
+}
+.procedure-section {
+    margin-top: 0.5em;
+}

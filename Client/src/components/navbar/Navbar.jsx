@@ -49,12 +49,11 @@ const Navbar = () => {
           <ul className="navbar-menu">
             <li><Link to="/" className="link">Home</Link></li>
             <li><Link to="/nutrition" className="link">Nutrition</Link></li>
-            <li><Link to="/recipe" className="link">Recipe</Link></li>
-            <li><Link to="/plan" className="link">Plan</Link></li>
-            <li><Link to="/demo" className="link">demo</Link></li>
-            <li><Link to="/fitness" className="link">fitness</Link></li>
-            <li><Link to="/gemini" className="link">gemini</Link></li>
+           
+            <li><Link to="/dataset" className="link">dataset</Link></li>
             <li><Link to="/goaltrack" className="link">goaltrack</Link></li>
+            <li><Link to="/indiandiet" className="link">IndianDiet</Link></li>
+            <li><Link to="/dietplan" className="link">DietPlan</Link></li>
           </ul>
         </div>
         <div className="nav-btn">
