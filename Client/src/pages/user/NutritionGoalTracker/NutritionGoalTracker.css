@@ -1,7 +1,6 @@
 /* Main container */
 .nutrition-tracker {
-    max-width: 800px;
-    margin: 0 auto;
+  margin-top: 7rem;
     font-family: 'Arial', sans-serif;
     padding: 20px;
   }

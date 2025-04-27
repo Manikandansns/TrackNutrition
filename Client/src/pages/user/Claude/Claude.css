@@ -16,9 +16,7 @@
   
   /* Container */
   .claude-container {
-    max-width: 64rem; /* Equivalent to max-w-5xl */
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 7rem;
     padding: 2rem 1rem; /* Equivalent to py-8 px-4 */
   }
   
