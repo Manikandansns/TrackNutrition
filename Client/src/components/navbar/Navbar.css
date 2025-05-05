@@ -14,19 +14,21 @@
 
 .navbar-bg {
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 26px 24px 90px 0 rgba(87, 183, 171, 0.19);
 }
+
 .nav-fav-btn{
   border: none;
   background-color: unset;
   display: flex;
   align-items: center;
 }
+
 .nav-fav{
   width: 20px;
-  height: 20px; 
+  height: 20px;
 }
 
 .navbar-container{
@@ -49,11 +51,16 @@
   color: black;
 }
 
+.logo {
+  color: #f75047;
+}
+
 .nav-links,
 .nav-btn {
   display: flex;
   align-items: center;
 }
+
 .nav-add-to-cart-btn{
   background-color: unset;
   border: none;
@@ -63,10 +70,68 @@
   padding: 0.5rem 0.5rem;
   text-decoration: none;
   color: black;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f75047;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.link:hover {
+  color: #f75047;
+}
+
+.link.active {
+  color: #f75047;
+}
+
+.link.active::after {
+  width: 100%;
 }
 
 .nav-link{
   color: black;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f75047;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #f75047;
+}
+
+.nav-link.active {
+  color: #f75047;
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-btn {
@@ -106,7 +171,7 @@
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 26px 24px 90px 0 rgba(87, 183, 171, 0.19);
   padding: 1rem;
@@ -137,7 +202,6 @@
   .profile-wrapper {
     display: none;
   }
-
   .bars {
     display: block;
   }

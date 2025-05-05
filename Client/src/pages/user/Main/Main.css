@@ -19,7 +19,7 @@ body {
 
 .main-title {
     text-align: center;
-    color: #f75047; /* Material UI primary blue */
+    color: #000; /* Material UI primary blue */
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ body {
     font-size: 1.4rem;
     font-weight: 500;
     color: #333;
-    border-bottom: 2px solid #f75047;
+    border-bottom: 2px solid #000;
     padding-bottom: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 1.5rem;

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './Navbar.css';
@@ -8,6 +8,7 @@ import './Navbar.css';
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   const [color, setColor] = useState(false);
+  const location = useLocation();
   // const navigate = useNavigate();
 
   const changeColor = () => {
@@ -18,26 +19,28 @@ const Navbar = () => {
     }
   };
 
-  window.addEventListener('scroll', changeColor);
+  useEffect(() => {
+    window.addEventListener('scroll', changeColor);
+    return () => {
+      window.removeEventListener('scroll', changeColor);
+    };
+  }, []);
 
   const closeNav = () => {
     setShowNav(false);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); 
+    localStorage.removeItem('token');
     localStorage.removeItem('userId');
-    localStorage.removeItem('cart'); 
+    localStorage.removeItem('cart');
     // navigate('/');  
-};
+  };
 
-// const handleFavorite =()=>{
-//   navigate('/favorites')
-// }
-
-// const handleCart = () =>{
-//   navigate('/cart')
-// }
+  // Function to check if link is active
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <nav className={color ? 'navbar navbar-bg' : 'navbar'}>
@@ -47,22 +50,15 @@ const Navbar = () => {
         </div>
         <div className="nav-links">
           <ul className="navbar-menu">
-            <li><Link to="/" className="link">Home</Link></li>
-            <li><Link to="/nutrition" className="link">Nutrition</Link></li>
-           
-            <li><Link to="/dataset" className="link">dataset</Link></li>
-            <li><Link to="/goaltrack" className="link">goaltrack</Link></li>
-            <li><Link to="/indiandiet" className="link">IndianDiet</Link></li>
-            <li><Link to="/dietplan" className="link">DietPlan</Link></li>
+            <li><Link to="/" className={`link ${isActive('/') ? 'active' : ''}`}>Home</Link></li>
+            <li><Link to="/nutrition" className={`link ${isActive('/nutrition') ? 'active' : ''}`}>Nutrition</Link></li>
+            <li><Link to="/dataset" className={`link ${isActive('/dataset') ? 'active' : ''}`}>Dataset</Link></li>
+            <li><Link to="/goaltrack" className={`link ${isActive('/goaltrack') ? 'active' : ''}`}>GoalTrack</Link></li>
+            <li><Link to="/indiandiet" className={`link ${isActive('/indiandiet') ? 'active' : ''}`}>IndianDiet</Link></li>
+            <li><Link to="/dietplan" className={`link ${isActive('/dietplan') ? 'active' : ''}`}>DietPlan</Link></li>
           </ul>
         </div>
         <div className="nav-btn">
-          {/* <button className="nav-fav-btn" onClick={handleFavorite}>
-          <img className="nav-fav" src={liked} />
-          </button> */}
-        {/* <button className="nav-add-to-cart-btn" onClick={handleCart}>
-        <ShoppingCartIcon/>
-        </button> */}
           <div className="profile-wrapper">
             <AccountCircleIcon />
             <Link to='/' className='link' onClick={handleLogout}>Logout</Link>
@@ -70,12 +66,13 @@ const Navbar = () => {
           <FaBars className="bars" onClick={() => setShowNav(!showNav)} />
         </div>
       </div>
-
       <div className={showNav ? 'nav-menu show-nav' : 'nav-menu'}>
-        <Link to="/" className="nav-link" onClick={closeNav}>Home</Link>
-        <Link to="/nutrition" className="nav-link" onClick={closeNav}>Nutrition</Link>
-        <Link to="/recipe" className="nav-link" onClick={closeNav}>Recipe</Link>
-        <li><Link to="/plan" className="link">Plan</Link></li>
+        <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={closeNav}>Home</Link>
+        <Link to="/nutrition" className={`nav-link ${isActive('/nutrition') ? 'active' : ''}`} onClick={closeNav}>Nutrition</Link>
+        <Link to="/dataset" className={`nav-link ${isActive('/dataset') ? 'active' : ''}`} onClick={closeNav}>Dataset</Link>
+        <Link to="/goaltrack" className={`nav-link ${isActive('/goaltrack') ? 'active' : ''}`} onClick={closeNav}>GoalTrack</Link>
+        <Link to="/indiandiet" className={`nav-link ${isActive('/indiandiet') ? 'active' : ''}`} onClick={closeNav}>IndianDiet</Link>
+        <Link to="/dietplan" className={`nav-link ${isActive('/dietplan') ? 'active' : ''}`} onClick={closeNav}>DietPlan</Link>
         <Link to="/" className="nav-link" onClick={closeNav}>Logout</Link>
       </div>
     </nav>

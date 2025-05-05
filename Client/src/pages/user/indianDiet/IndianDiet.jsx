@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { IndianFoods } from '../../../data/data';
-import './Claude.css'; // Import the CSS file
+import './IndianDiet.css'; // Import the CSS file
 
-const Claude = () => {
+const IndianDiet = () => {
   // ... (keep all your state variables and functions as they are) ...
   const [currentWeight, setCurrentWeight] = useState(0);
   const [targetWeight, setTargetWeight] = useState(0);
@@ -379,74 +379,74 @@ const Claude = () => {
 
   return (
     // Replace all className props with the new CSS class names
-    <div className="claude-container">
-      <h1 className="claude-main-title">Indian Fitness Meal Planner</h1>
+    <div className="indiandiet-container">
+      <h1 className="indiandiet-main-title">Indian Fitness Meal Planner</h1>
 
       {/* User Input Form */}
-      <div className="claude-card">
-        <h2 className="claude-card-title">Your Metrics</h2>
+      <div className="indiandiet-card">
+        <h2 className="indiandiet-card-title">Your Metrics</h2>
         <form onSubmit={handleSubmit}>
-          <div className="claude-form-grid">
-            <div className="claude-form-group">
-              <label className="claude-label">Current Weight (kg)</label>
+          <div className="indiandiet-form-grid">
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Current Weight (kg)</label>
               <input
                 type="number"
                 min="30"
                 max="200"
                 step="0.1"
-                className="claude-input"
+                className="indiandiet-input"
                 value={currentWeight || ''}
                 onChange={(e) => setCurrentWeight(Number(e.target.value))}
                 required
               />
-              <p className="claude-input-hint">{currentWeight ? `${kgToLbs(currentWeight)} lbs` : ''}</p>
+              <p className="indiandiet-input-hint">{currentWeight ? `${kgToLbs(currentWeight)} lbs` : ''}</p>
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Target Weight (kg)</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Target Weight (kg)</label>
               <input
                 type="number"
                 min="30"
                 max="200"
                  step="0.1"
-                className="claude-input"
+                className="indiandiet-input"
                 value={targetWeight || ''}
                 onChange={(e) => setTargetWeight(Number(e.target.value))}
                 required
               />
-              <p className="claude-input-hint">{targetWeight ? `${kgToLbs(targetWeight)} lbs` : ''}</p>
+              <p className="indiandiet-input-hint">{targetWeight ? `${kgToLbs(targetWeight)} lbs` : ''}</p>
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Height (cm)</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Height (cm)</label>
               <input
                 type="number"
                 min="100"
                 max="250"
-                className="claude-input"
+                className="indiandiet-input"
                 value={height || ''}
                 onChange={(e) => setHeight(Number(e.target.value))}
                 required
               />
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Age</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Age</label>
               <input
                 type="number"
                 min="15"
                 max="100"
-                className="claude-input"
+                className="indiandiet-input"
                 value={age || ''}
                 onChange={(e) => setAge(Number(e.target.value))}
                 required
               />
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Gender</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Gender</label>
               <select
-                className="claude-select"
+                className="indiandiet-select"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
                 required
@@ -456,10 +456,10 @@ const Claude = () => {
               </select>
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Activity Level</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Activity Level</label>
               <select
-                className="claude-select"
+                className="indiandiet-select"
                 value={activityLevel}
                 onChange={(e) => setActivityLevel(e.target.value)}
                 required
@@ -472,10 +472,10 @@ const Claude = () => {
               </select>
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Fitness Goal</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Fitness Goal</label>
               <select
-                className="claude-select"
+                className="indiandiet-select"
                 value={fitnessGoal}
                 onChange={(e) => setFitnessGoal(e.target.value)}
                 required
@@ -486,34 +486,34 @@ const Claude = () => {
               </select>
             </div>
 
-            <div className="claude-form-group">
-              <label className="claude-label">Daily Budget (INR, optional)</label>
+            <div className="indiandiet-form-group">
+              <label className="indiandiet-label">Daily Budget (INR, optional)</label>
               <input
                 type="number"
                 min="0"
-                className="claude-input"
+                className="indiandiet-input"
                 value={budgetConstraint || ''}
                 onChange={(e) => setBudgetConstraint(Number(e.target.value))}
               />
-              <p className="claude-input-hint">Leave empty for no budget constraint</p>
+              <p className="indiandiet-input-hint">Leave empty for no budget constraint</p>
             </div>
 
-            <div className="claude-checkbox-group">
+            <div className="indiandiet-checkbox-group">
               <input
                 type="checkbox"
                 id="vegetarian"
-                className="claude-checkbox"
+                className="indiandiet-checkbox"
                 checked={vegetarian}
                 onChange={(e) => setVegetarian(e.target.checked)}
               />
-              <label htmlFor="vegetarian" className="claude-label" style={{ marginBottom: 0 }}>Vegetarian</label> {/* Inline style to override default margin */}
+              <label htmlFor="vegetarian" className="indiandiet-label" style={{ marginBottom: 0 }}>Vegetarian</label> {/* Inline style to override default margin */}
             </div>
           </div>
 
           <div> {/* Container for the button */}
             <button
               type="submit"
-              className="claude-submit-button"
+              className="indiandiet-submit-button"
               disabled={loading || isRecommending}
             >
               {loading ? 'Generating...' : 'Generate Meal Plan'}
@@ -524,29 +524,29 @@ const Claude = () => {
 
       {/* Nutrition Goals */}
       {calorieGoal > 0 && (
-        <div className="claude-card">
-          <h2 className="claude-card-title">Your Nutrition Goals</h2>
+        <div className="indiandiet-card">
+          <h2 className="indiandiet-card-title">Your Nutrition Goals</h2>
 
-          <div className="claude-goals-grid">
-            <div className="claude-goal-item claude-goal-item--calories">
+          <div className="indiandiet-goals-grid">
+            <div className="indiandiet-goal-item indiandiet-goal-item--calories">
               <h3>Daily Calories</h3>
               <p>{calorieGoal} kcal</p>
               <p> </p> {/* Placeholder for consistent height */}
             </div>
 
-            <div className="claude-goal-item claude-goal-item--protein">
+            <div className="indiandiet-goal-item indiandiet-goal-item--protein">
               <h3>Protein</h3>
               <p>{proteinGoal}g</p>
               <p>{calorieGoal > 0 ? Math.round((proteinGoal * 4) / calorieGoal * 100) : 0}% of total calories</p>
             </div>
 
-            <div className="claude-goal-item claude-goal-item--carbs">
+            <div className="indiandiet-goal-item indiandiet-goal-item--carbs">
               <h3>Carbohydrates</h3>
               <p>{carbGoal}g</p>
                <p>{calorieGoal > 0 ? Math.round((carbGoal * 4) / calorieGoal * 100) : 0}% of total calories</p>
             </div>
 
-            <div className="claude-goal-item claude-goal-item--fat">
+            <div className="indiandiet-goal-item indiandiet-goal-item--fat">
               <h3>Fat</h3>
               <p>{fatGoal}g</p>
               <p>{calorieGoal > 0 ? Math.round((fatGoal * 9) / calorieGoal * 100) : 0}% of total calories</p>
@@ -554,7 +554,7 @@ const Claude = () => {
           </div>
 
           {timeline && timeline.possible === false && (
-             <div className="claude-timeline-card" style={{backgroundColor: '#fff5f5', borderColor: '#fed7d7'}}> {/* Reddish tint */}
+             <div className="indiandiet-timeline-card" style={{backgroundColor: '#fff5f5', borderColor: '#fed7d7'}}> {/* Reddish tint */}
                 <h3 style={{color: '#c53030'}}>Goal Timeline</h3>
                 <p style={{fontSize: '1rem'}}>
                     Your current nutrition goals (based on activity/goal) may not lead towards your target weight. Adjust your fitness goal or activity level if needed.
@@ -562,7 +562,7 @@ const Claude = () => {
             </div>
           )}
           {timeline && timeline.possible !== false && timeline.weeks !== Infinity && (
-            <div className="claude-timeline-card">
+            <div className="indiandiet-timeline-card">
               <h3>Expected Timeline to Goal</h3>
               <p>
                 Based on your metrics and goals, it may take approximately
@@ -580,64 +580,64 @@ const Claude = () => {
       {/* Meal Plan Results */}
       {/* Render only if mealPlan has been generated (check one of the arrays) */}
       {mealPlan.breakfast.length > 0 || mealPlan.lunch.length > 0 || mealPlan.dinner.length > 0 || mealPlan.snacks.length > 0 ? (
-        <div className="claude-card">
-          <h2 className="claude-card-title">Your Indian Meal Plan</h2>
+        <div className="indiandiet-card">
+          <h2 className="indiandiet-card-title">Your Indian Meal Plan</h2>
 
           {/* Progress towards daily goals */}
-          <div className="claude-results-section">
-            <h3 className="claude-progress-title">Daily Progress</h3>
-            <div className="claude-results-grid"> {/* Use responsive grid */}
+          <div className="indiandiet-results-section">
+            <h3 className="indiandiet-progress-title">Daily Progress</h3>
+            <div className="indiandiet-results-grid"> {/* Use responsive grid */}
               {/* Calories Progress */}
-              <div className="claude-progress-item">
+              <div className="indiandiet-progress-item">
                 <div>
                   <span>Calories: {totals.calories} / {calorieGoal} kcal</span>
                   <span>{getPercentOfGoal(totals.calories, calorieGoal)}%</span>
                 </div>
-                <div className="claude-progress-track">
+                <div className="indiandiet-progress-track">
                   <div
-                    className="claude-progress-fill claude-progress-fill--calories"
+                    className="indiandiet-progress-fill indiandiet-progress-fill--calories"
                     style={{ width: `${getPercentOfGoal(totals.calories, calorieGoal)}%` }}
                   ></div>
                 </div>
               </div>
 
               {/* Protein Progress */}
-               <div className="claude-progress-item">
+               <div className="indiandiet-progress-item">
                  <div>
                    <span>Protein: {totals.protein} / {proteinGoal}g</span>
                    <span>{getPercentOfGoal(totals.protein, proteinGoal)}%</span>
                  </div>
-                 <div className="claude-progress-track">
+                 <div className="indiandiet-progress-track">
                    <div
-                     className="claude-progress-fill claude-progress-fill--protein"
+                     className="indiandiet-progress-fill indiandiet-progress-fill--protein"
                      style={{ width: `${getPercentOfGoal(totals.protein, proteinGoal)}%` }}
                    ></div>
                  </div>
                </div>
 
               {/* Carbs Progress */}
-               <div className="claude-progress-item">
+               <div className="indiandiet-progress-item">
                  <div>
                    <span>Carbs: {totals.carbs} / {carbGoal}g</span>
                    <span>{getPercentOfGoal(totals.carbs, carbGoal)}%</span>
                  </div>
-                 <div className="claude-progress-track">
+                 <div className="indiandiet-progress-track">
                    <div
-                     className="claude-progress-fill claude-progress-fill--carbs"
+                     className="indiandiet-progress-fill indiandiet-progress-fill--carbs"
                      style={{ width: `${getPercentOfGoal(totals.carbs, carbGoal)}%` }}
                    ></div>
                  </div>
                </div>
 
               {/* Fat Progress */}
-               <div className="claude-progress-item">
+               <div className="indiandiet-progress-item">
                  <div>
                    <span>Fat: {totals.fat} / {fatGoal}g</span>
                    <span>{getPercentOfGoal(totals.fat, fatGoal)}%</span>
                  </div>
-                 <div className="claude-progress-track">
+                 <div className="indiandiet-progress-track">
                    <div
-                     className="claude-progress-fill claude-progress-fill--fat"
+                     className="indiandiet-progress-fill indiandiet-progress-fill--fat"
                      style={{ width: `${getPercentOfGoal(totals.fat, fatGoal)}%` }}
                    ></div>
                  </div>
@@ -645,7 +645,7 @@ const Claude = () => {
             </div> {/* End results grid */}
 
             {/* Cost Progress */}
-            <div className="claude-cost-section">
+            <div className="indiandiet-cost-section">
               <div>
                 <span>Daily Cost: {formatCurrency(totals.cost)}</span>
                 {budgetConstraint > 0 && (
@@ -653,9 +653,9 @@ const Claude = () => {
                 )}
               </div>
               {budgetConstraint > 0 && (
-                <div className="claude-progress-track">
+                <div className="indiandiet-progress-track">
                   <div
-                    className="claude-progress-fill claude-progress-fill--cost"
+                    className="indiandiet-progress-fill indiandiet-progress-fill--cost"
                     style={{ width: `${getPercentOfGoal(totals.cost, budgetConstraint)}%` }}
                   ></div>
                 </div>
@@ -665,35 +665,35 @@ const Claude = () => {
 
 
           {/* Meal-by-meal breakdown */}
-          <div className="claude-meal-sections-container">
+          <div className="indiandiet-meal-sections-container">
             {/* Breakfast */}
             {mealPlan.breakfast && mealPlan.breakfast.length > 0 && (
-                <div className="claude-meal-section">
-                <h3 className="claude-meal-title claude-meal-title--breakfast">Breakfast</h3>
-                 <div className="claude-meal-content claude-meal-content--breakfast">
-                    <div className="claude-table-container">
-                        <table className="claude-table">
+                <div className="indiandiet-meal-section">
+                <h3 className="indiandiet-meal-title indiandiet-meal-title--breakfast">Breakfast</h3>
+                 <div className="indiandiet-meal-content indiandiet-meal-content--breakfast">
+                    <div className="indiandiet-table-container">
+                        <table className="indiandiet-table">
                         <thead>
                             <tr>
-                            <th className="claude-table-cell">Food</th>
-                            <th className="claude-table-cell">Quantity</th>
-                            <th className="claude-table-cell">Protein</th>
-                            <th className="claude-table-cell">Carbs</th>
-                            <th className="claude-table-cell">Fat</th>
-                            <th className="claude-table-cell">Calories</th>
-                            <th className="claude-table-cell">Cost</th>
+                            <th className="indiandiet-table-cell">Food</th>
+                            <th className="indiandiet-table-cell">Quantity</th>
+                            <th className="indiandiet-table-cell">Protein</th>
+                            <th className="indiandiet-table-cell">Carbs</th>
+                            <th className="indiandiet-table-cell">Fat</th>
+                            <th className="indiandiet-table-cell">Calories</th>
+                            <th className="indiandiet-table-cell">Cost</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mealPlan.breakfast.map((food) => (
                             <tr key={`${food.id}-breakfast`}>
-                                <td className="claude-table-cell">{food.description}</td>
-                                <td className="claude-table-cell">{food.quantity}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
-                                <td className="claude-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
+                                <td className="indiandiet-table-cell">{food.description}</td>
+                                <td className="indiandiet-table-cell">{food.quantity}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
+                                <td className="indiandiet-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
                             </tr>
                             ))}
                         </tbody>
@@ -705,32 +705,32 @@ const Claude = () => {
 
              {/* Lunch */}
             {mealPlan.lunch && mealPlan.lunch.length > 0 && (
-                <div className="claude-meal-section">
-                <h3 className="claude-meal-title claude-meal-title--lunch">Lunch</h3>
-                 <div className="claude-meal-content claude-meal-content--lunch">
-                    <div className="claude-table-container">
-                        <table className="claude-table">
+                <div className="indiandiet-meal-section">
+                <h3 className="indiandiet-meal-title indiandiet-meal-title--lunch">Lunch</h3>
+                 <div className="indiandiet-meal-content indiandiet-meal-content--lunch">
+                    <div className="indiandiet-table-container">
+                        <table className="indiandiet-table">
                         <thead>
                             <tr>
-                            <th className="claude-table-cell">Food</th>
-                            <th className="claude-table-cell">Quantity</th>
-                            <th className="claude-table-cell">Protein</th>
-                            <th className="claude-table-cell">Carbs</th>
-                            <th className="claude-table-cell">Fat</th>
-                            <th className="claude-table-cell">Calories</th>
-                            <th className="claude-table-cell">Cost</th>
+                            <th className="indiandiet-table-cell">Food</th>
+                            <th className="indiandiet-table-cell">Quantity</th>
+                            <th className="indiandiet-table-cell">Protein</th>
+                            <th className="indiandiet-table-cell">Carbs</th>
+                            <th className="indiandiet-table-cell">Fat</th>
+                            <th className="indiandiet-table-cell">Calories</th>
+                            <th className="indiandiet-table-cell">Cost</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mealPlan.lunch.map((food) => (
                             <tr key={`${food.id}-lunch`}>
-                                <td className="claude-table-cell">{food.description}</td>
-                                <td className="claude-table-cell">{food.quantity}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
-                                <td className="claude-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
+                                <td className="indiandiet-table-cell">{food.description}</td>
+                                <td className="indiandiet-table-cell">{food.quantity}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
+                                <td className="indiandiet-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
                             </tr>
                             ))}
                         </tbody>
@@ -742,32 +742,32 @@ const Claude = () => {
 
              {/* Dinner */}
             {mealPlan.dinner && mealPlan.dinner.length > 0 && (
-                <div className="claude-meal-section">
-                <h3 className="claude-meal-title claude-meal-title--dinner">Dinner</h3>
-                 <div className="claude-meal-content claude-meal-content--dinner">
-                    <div className="claude-table-container">
-                        <table className="claude-table">
+                <div className="indiandiet-meal-section">
+                <h3 className="indiandiet-meal-title indiandiet-meal-title--dinner">Dinner</h3>
+                 <div className="indiandiet-meal-content indiandiet-meal-content--dinner">
+                    <div className="indiandiet-table-container">
+                        <table className="indiandiet-table">
                         <thead>
                             <tr>
-                            <th className="claude-table-cell">Food</th>
-                            <th className="claude-table-cell">Quantity</th>
-                            <th className="claude-table-cell">Protein</th>
-                            <th className="claude-table-cell">Carbs</th>
-                            <th className="claude-table-cell">Fat</th>
-                            <th className="claude-table-cell">Calories</th>
-                            <th className="claude-table-cell">Cost</th>
+                            <th className="indiandiet-table-cell">Food</th>
+                            <th className="indiandiet-table-cell">Quantity</th>
+                            <th className="indiandiet-table-cell">Protein</th>
+                            <th className="indiandiet-table-cell">Carbs</th>
+                            <th className="indiandiet-table-cell">Fat</th>
+                            <th className="indiandiet-table-cell">Calories</th>
+                            <th className="indiandiet-table-cell">Cost</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mealPlan.dinner.map((food) => (
                             <tr key={`${food.id}-dinner`}>
-                                <td className="claude-table-cell">{food.description}</td>
-                                <td className="claude-table-cell">{food.quantity}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
-                                <td className="claude-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
+                                <td className="indiandiet-table-cell">{food.description}</td>
+                                <td className="indiandiet-table-cell">{food.quantity}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
+                                <td className="indiandiet-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
                             </tr>
                             ))}
                         </tbody>
@@ -779,32 +779,32 @@ const Claude = () => {
 
              {/* Snacks */}
             {mealPlan.snacks && mealPlan.snacks.length > 0 && (
-                <div className="claude-meal-section">
-                <h3 className="claude-meal-title claude-meal-title--snacks">Snacks</h3>
-                 <div className="claude-meal-content claude-meal-content--snacks">
-                    <div className="claude-table-container">
-                        <table className="claude-table">
+                <div className="indiandiet-meal-section">
+                <h3 className="indiandiet-meal-title indiandiet-meal-title--snacks">Snacks</h3>
+                 <div className="indiandiet-meal-content indiandiet-meal-content--snacks">
+                    <div className="indiandiet-table-container">
+                        <table className="indiandiet-table">
                         <thead>
                             <tr>
-                            <th className="claude-table-cell">Food</th>
-                            <th className="claude-table-cell">Quantity</th>
-                            <th className="claude-table-cell">Protein</th>
-                            <th className="claude-table-cell">Carbs</th>
-                            <th className="claude-table-cell">Fat</th>
-                            <th className="claude-table-cell">Calories</th>
-                            <th className="claude-table-cell">Cost</th>
+                            <th className="indiandiet-table-cell">Food</th>
+                            <th className="indiandiet-table-cell">Quantity</th>
+                            <th className="indiandiet-table-cell">Protein</th>
+                            <th className="indiandiet-table-cell">Carbs</th>
+                            <th className="indiandiet-table-cell">Fat</th>
+                            <th className="indiandiet-table-cell">Calories</th>
+                            <th className="indiandiet-table-cell">Cost</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mealPlan.snacks.map((food) => (
                             <tr key={`${food.id}-snacks`}>
-                                <td className="claude-table-cell">{food.description}</td>
-                                <td className="claude-table-cell">{food.quantity}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
-                                <td className="claude-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
-                                <td className="claude-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
+                                <td className="indiandiet-table-cell">{food.description}</td>
+                                <td className="indiandiet-table-cell">{food.quantity}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.protein * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.carbs * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.fat * food.quantity / 100)}g</td>
+                                <td className="indiandiet-table-cell">{Math.round(food.nutrients.calories * food.quantity / 100)} kcal</td>
+                                <td className="indiandiet-table-cell">{formatCurrency(food.costPer100g * food.quantity / 100)}</td>
                             </tr>
                             ))}
                         </tbody>
@@ -817,18 +817,18 @@ const Claude = () => {
 
           {/* Shopping List (using selectedFoods which has aggregated quantities) */}
           {selectedFoods.length > 0 && (
-            <div className="claude-shopping-list-section">
-              <h3 className="claude-shopping-list-title">Shopping List (Total Quantities)</h3>
-              <div className="claude-shopping-list-content">
-                <div className="claude-shopping-list-grid">
+            <div className="indiandiet-shopping-list-section">
+              <h3 className="indiandiet-shopping-list-title">Shopping List (Total Quantities)</h3>
+              <div className="indiandiet-shopping-list-content">
+                <div className="indiandiet-shopping-list-grid">
                   {selectedFoods.map((food) => (
-                    <div key={`${food.id}-shopping`} className="claude-shopping-list-item">
+                    <div key={`${food.id}-shopping`} className="indiandiet-shopping-list-item">
                       <span>{food.description}</span>
                       <span>{food.quantity}g</span>
                     </div>
                   ))}
                 </div>
-                <div className="claude-shopping-list-total">
+                <div className="indiandiet-shopping-list-total">
                   <p>Total Estimated Cost: {formatCurrency(totals.cost)}</p>
                 </div>
               </div>
@@ -836,9 +836,9 @@ const Claude = () => {
           )}
 
           {/* Meal Plan Tips */}
-          <div className="claude-tips-section">
-            <h3 className="claude-tips-title">Meal Plan Tips</h3>
-            <ul className="claude-tips-list">
+          <div className="indiandiet-tips-section">
+            <h3 className="indiandiet-tips-title">Meal Plan Tips</h3>
+            <ul className="indiandiet-tips-list">
               <li>Drink plenty of water throughout the day (aim for 3-4 liters).</li>
               <li>This meal plan provides a balanced approach based on your metrics and goals. Quantities are estimates; adjust based on hunger and progress.</li>
               <li>Feel free to add spices and herbs to your meals for flavor without adding significant calories.</li>
@@ -862,14 +862,14 @@ const Claude = () => {
 
       {/* Error Message Display */}
       {error && (
-        <div className="claude-error-message">
+        <div className="indiandiet-error-message">
           <strong>Error:</strong>
           <span> {error}</span>
         </div>
       )}
 
       {/* Disclaimer */}
-      <div className="claude-disclaimer">
+      <div className="indiandiet-disclaimer">
         <p>Disclaimer: This meal planner provides general guidance based on standard calculations and a simplified selection process. Individual needs may vary.
           Consult with a registered dietitian or healthcare provider for personalized advice.</p>
       </div>
@@ -877,4 +877,4 @@ const Claude = () => {
   );
 };
 
-export default Claude;
+export default IndianDiet;

@@ -400,7 +400,7 @@ Japanese Vegetable Broth Fried Eggs,A hearty Japanese breakfast with fried eggs 
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Container maxWidth="lg" sx={{ py: 4 }} style={{marginTop: '7rem'}}>
         <Box sx={{ mb: 4 }}>
           <Typography variant="h4" gutterBottom color="primary">
             Nutrition Tracker & Meal Recommender
